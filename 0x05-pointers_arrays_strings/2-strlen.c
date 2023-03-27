@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _strlen - returns the size of @s
- * @s - the string
- * return - the length of @s
+ * _strlen - returns the length of a string
+ * @s: the string
+ * Return: length of a string
  * Code by - yusifhuseini
 **/
 
