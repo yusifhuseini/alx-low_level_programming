@@ -2,9 +2,9 @@
 
 /**
  * _puts - prints a string, add '\n', to stdout
- * @str - contains the string that will be printed
+ * @str: contains the string that will be printed
  * Code by - yusifhuseini
-**/
+ */
 
 void _puts(char *str)
 {
