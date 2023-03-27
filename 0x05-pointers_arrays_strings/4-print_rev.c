@@ -3,7 +3,7 @@
 
 /**
  * print_rev - prints a string in reverse
- * @s - printed string in reverse order
+ * @s: printed string in reverse order
  * Code by - yusifhuseini
 **/
 
