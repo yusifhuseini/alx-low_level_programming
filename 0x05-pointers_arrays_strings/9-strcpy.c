@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * _strcpy - duplicates the string that is pointed
- * @dest - destination string where the copy will be stored
- * @src - the source string that needs to be copied
- * return - a copy of the origin string
+ * _strcpy - copy the string pointed to by src to dest
+ * @dest: copy of the string
+ * @src: origin of the string
+ * Return: dest 0 for success
  * Code by - yusifhuseini
 **/
 
