@@ -3,8 +3,8 @@
 
 /**
  * print_array - prints n elements of an array
- * @a - the array that will be printed
- * @n - number of elements in the array
+ * @a: the array that will be printed
+ * @n: number of elements in the array
  * Code by yusifhuseini
 **/
 
