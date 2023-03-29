@@ -1,14 +1,11 @@
 #include "main.h"
-
 /**
- * _strcmp - function that compares two strings
- * @s1: pointer to the first string
- * @s2: pointer to the second string
- * Return: 0 if the two strings are equal, 
- * otherwise a non-zero value.
- * Code by - yusifhuseini
+ * _strcmp - compares two strings
+ * @s1: input parameter
+ * @s2: input parameter
+ *
+ * Return: 0 if equal or b if is different
  */
-
 int _strcmp(char *s1, char *s2)
 {
 	int a = 0;
