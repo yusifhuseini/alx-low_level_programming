@@ -1,64 +1,42 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
+#include "main.h"
 
 /**
- * main - Entry point
- * @argc: Number of command-line arguments
- * @argv: Array containing the command-line arguments
- *
- * Description: This program takes in a single command-line argument,
- * which is assumed to be a non-negative integer. The program calculates
- * the minimum number of coins required to make change for the given amount,
- * using quarters, dimes, nickels, and pennies. The program then prints
- * the minimum number of coins required. If the argument is negative,
- * the program prints 0 and returns 0. If the argument is not a single
- * non-negative integer, the program prints an error message and returns 1.
+ * main - entry point is the main function
+ * @argc: an integer representing the count of command line arguments
+ * @argv: an array of strings representing the command line arguments
+ * Description: Calculate the minimum number of coins needed
+ * to provide change for a given amount of money.
  * Code by - yusifhuseini
- * Return: 0 if successful, 1 if an error occurred.
+ * Return: 0 if successful, 1 if no argument is provided
  */
-
 int main(int argc, char *argv[])
 {
-	int value, c;
+	int coins[5] = { 25, 10, 5, 2, 1 };
+	int total, i, val;
 
-	c = 0;
+	total = 0;
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	value = atoi(argv[1]);
-	if (value < 0)
+	val = atoi(argv[1]);
+	if (val < 1)
 	{
-		printf("%d\n", 0);
-		return (0);
+		printf("0\n");
 	}
-	if (value % 25 >= 0)
+	else
 	{
-		c += value / 25;
-		value = value % 25;
+		for (i = 0; i < 5; ++i)
+		{
+			total += (val / coins[i]);
+			val %= coins[i];
+			if (val == 0)
+				break;
+		}
+		printf("%d\n", total);
 	}
-	if (value % 10 >= 0)
-	{
-		c += value / 10;
-		value = value % 10;
-	}
-	if (value % 5 >= 0)
-	{
-		c += value / 5;
-		value = value % 5;
-	}
-	if (value % 2 >= 0)
-	{
-		c += value / 2;
-		value = value % 2;
-	}
-	if (value % 1 >= 0)
-	{
-		c += value / 1;
-	}
-	printf("%d\n", c);
 	return (0);
 }
