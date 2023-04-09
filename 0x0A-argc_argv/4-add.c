@@ -1,54 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
+#include "main.h"
 
 /**
- * main - Entry point
- * @argc: Number of command-line arguments
- * @argv: Array containing the command-line arguments
- *
- * Description: This program takes in multiple command-line arguments,
- * which are assumed to be positive integers. The program adds up all
- * the integers and prints the sum. If any of the arguments are not
- * positive integers, the program prints an error message and returns 1.
- * If there are less than two arguments, the program prints 0 and returns 0.
+ * main - entry point is the main function
+ * @argc: an integer representing the count of command line arguments
+ * @argv: an array of strings representing the command line arguments
+ * Description: The program prints positive integers
  * Code by - yusifhuseini
- * Return: The sum of the positive integers, or 0 if there are less than two
- * arguments or an error occurred.
+ * Return: 0 if successful, 1 if no argument is provided
  */
 int main(int argc, char *argv[])
 {
-	unsigned int i, sum, num;
+	int i, sum;
+	char *ptr;
 
 	sum = 0;
-
-	/* Check if there are at least two arguments */
-	if (argc < 3)
+	for (i = 1; i < argc; ++i)
 	{
-		printf("%d\n", 0);
-		return (0);
-	}
-
-	/* Iterate through each argument and add up the positive integers */
-	while (argc-- && argc > 0)
-	{
-		/* Check if the argument is a positive integer */
-		for (i = 0; argv[argc][i] != '\0'; i++)
+		strtol(argv[i], &ptr, 10);
+		if (*ptr == '\0')
 		{
-			if (!(isdigit(argv[argc][i])))
-			{
-				printf("Error\n");
-				return (1);
-			}
+			sum += atoi(argv[i]);
 		}
-
-		/* Convert the argument to an integer and add it to the sum */
-		num = atoi(argv[argc]);
-		sum += num;
+		else
+		{
+			printf("Error\n");
+			return (1);
+		}
 	}
-
-	/* Print the sum and return it */
 	printf("%d\n", sum);
-	return (sum);
+	return (0);
 }
