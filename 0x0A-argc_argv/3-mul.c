@@ -1,37 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
 
 /**
- * main - Entry point
- * @argc: Number of command-line arguments
- * @argv: Array containing the command-line arguments
+ * main - entry point is the main function
  *
- * Description: This program takes in two command-line arguments,
- * multiplies them together, and prints the result. If the number of
- * arguments is not 2, the program prints an error message and returns 1.
+ * @argc: an integer representing the count of command line arguments
+ * @argv: an array of strings representing the command line arguments
+ *
+ * Description: multiplies two integers from the command line arguments
  * Code by - yusifhuseini
- * Return: 0 if successful, 1 if an error occurred
+ * Return: value 0 upon successful completion and 1 upon failure
  */
 int main(int argc, char *argv[])
 {
-	int i, val = 1;
-
-	/* Check if there are exactly two arguments */
 	if (argc != 3)
 	{
 		printf("Error\n");
 		return (1);
 	}
-
-	/* Convert arguments to integers and multiply them together */
-	for (i = 1; i < argc; i++)
-	{
-		val *= atoi(argv[i]);
-	}
-
-	/* Print the result */
-	printf("%d\n", val);
-
-	/* Return success */
+	printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
 	return (0);
 }
