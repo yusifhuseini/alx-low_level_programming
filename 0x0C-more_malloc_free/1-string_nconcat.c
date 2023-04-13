@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * *string_nconcat - concatenates two strings
+ * *string_nconcat - concatenates two strings to func
  * @s1: 1st string
  * @s2: 2ne string
  * @n: max no. of byte of @s2
